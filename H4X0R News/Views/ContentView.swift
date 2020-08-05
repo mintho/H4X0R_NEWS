@@ -14,6 +14,17 @@ struct ContentView: View {
     @State private var isShowing = false
     @ObservedObject var networkManager = NetworkManager()
     
+    init() {
+        
+ 
+        UINavigationBar.appearance().titleTextAttributes =
+            [.font : UIFont.monospacedSystemFont(ofSize: 17, weight: .bold), .foregroundColor : UIColor.systemGreen]
+        UINavigationBar.appearance().largeTitleTextAttributes =
+            [.font : UIFont.monospacedSystemFont(ofSize: 30, weight: .bold), .foregroundColor : UIColor.systemGreen]
+ 
+
+    }
+    
     var body: some View {
         NavigationView {
             List(networkManager.posts) { post in
@@ -28,7 +39,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle("H4X0R_NEWS")
+            .navigationBarTitle("H4X0R_NEWS").foregroundColor(.green)
             .pullToRefresh(isShowing: $isShowing) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.networkManager.fetchData()
