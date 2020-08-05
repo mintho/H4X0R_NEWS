@@ -7,22 +7,34 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh
 
 struct ContentView: View {
     
+    @State private var isShowing = false
     @ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
         NavigationView {
             List(networkManager.posts) { post in
                 NavigationLink(destination: DetailView(url: post.url)) {
-                    HStack {
-                        Text(String(post.points))
+                    HStack(alignment: .top) {
+                        Text(String(post.points)).frame(width: 40)
+                            .font(.system(size: 17, design: .monospaced))
+                            .foregroundColor(Color.pink)
                         Text(post.title)
+                            .font(.system(size: 17, design: .monospaced))
+                            .foregroundColor(Color.green)
                     }
                 }
             }
-            .navigationBarTitle("H4X0R NEWS")
+            .navigationBarTitle("H4X0R_NEWS")
+            .pullToRefresh(isShowing: $isShowing) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.networkManager.fetchData()
+                    self.isShowing = false
+                }
+            }
         }
         .onAppear {
             self.networkManager.fetchData()

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5771C82224DA9C59009444B4 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 5771C82124DA9C59009444B4 /* SwiftUIRefresh */; };
 		ADAAB81623254E6F006325FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAB81523254E6F006325FC /* AppDelegate.swift */; };
 		ADAAB81823254E6F006325FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAB81723254E6F006325FC /* SceneDelegate.swift */; };
 		ADAAB81A23254E6F006325FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAB81923254E6F006325FC /* ContentView.swift */; };
@@ -20,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ADAAB81223254E6F006325FC /* H4X0R News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "H4X0R News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADAAB81223254E6F006325FC /* H4X0R_NEWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H4X0R_NEWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAAB81523254E6F006325FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAAB81723254E6F006325FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ADAAB81923254E6F006325FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5771C82224DA9C59009444B4 /* SwiftUIRefresh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +58,7 @@
 		ADAAB81323254E6F006325FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADAAB81223254E6F006325FC /* H4X0R News.app */,
+				ADAAB81223254E6F006325FC /* H4X0R_NEWS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,8 +121,11 @@
 			dependencies = (
 			);
 			name = "H4X0R News";
+			packageProductDependencies = (
+				5771C82124DA9C59009444B4 /* SwiftUIRefresh */,
+			);
 			productName = "H4X0R News";
-			productReference = ADAAB81223254E6F006325FC /* H4X0R News.app */;
+			productReference = ADAAB81223254E6F006325FC /* H4X0R_NEWS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,6 +152,9 @@
 				Base,
 			);
 			mainGroup = ADAAB80923254E6F006325FC;
+			packageReferences = (
+				5771C82024DA9C59009444B4 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
+			);
 			productRefGroup = ADAAB81323254E6F006325FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,14 +326,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"H4X0R News/Preview Content\"";
+				DEVELOPMENT_TEAM = J5S2US7X3W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "H4X0R News/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AngelaYu.H4X0R-News";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitalmints.H4X0RNEWS;
+				PRODUCT_NAME = H4X0R_NEWS;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,14 +346,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"H4X0R News/Preview Content\"";
+				DEVELOPMENT_TEAM = J5S2US7X3W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "H4X0R News/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AngelaYu.H4X0R-News";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitalmints.H4X0RNEWS;
+				PRODUCT_NAME = H4X0R_NEWS;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -372,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5771C82024DA9C59009444B4 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5771C82124DA9C59009444B4 /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5771C82024DA9C59009444B4 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADAAB80A23254E6F006325FC /* Project object */;
 }
