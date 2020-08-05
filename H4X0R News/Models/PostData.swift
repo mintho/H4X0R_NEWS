@@ -20,4 +20,8 @@ struct Post: Decodable, Identifiable {
     let points: Int
     let title: String
     let url: String?
+    var url2: String {
+        return "https://news.ycombinator.com/item?id=\(objectID)"
+    }
+    
 }

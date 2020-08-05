@@ -24,13 +24,12 @@ struct ContentView: View {
         UINavigationBar.appearance().largeTitleTextAttributes =
             [.font : UIFont.monospacedSystemFont(ofSize: 30, weight: .bold), .foregroundColor : UIColor.systemGreen]
         
-        
     }
     
     var body: some View {
         NavigationView {
             List(networkManager.posts) { post in
-                NavigationLink(destination: DetailView(url: post.url)) {
+                NavigationLink(destination: DetailView(url: post.url ?? post.url2)) {
                     HStack(alignment: .top) {
                         Text(String(post.points)).frame(width: 40)
                             .font(.system(size: 17, design: .monospaced))

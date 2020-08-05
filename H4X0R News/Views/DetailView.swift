@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    let url: String?
+    let url: String
     
     @State private var showShareSheet = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -40,13 +40,12 @@ struct DetailView: View {
     
     
     var body: some View {
-        WebView(urlString: url)
+        return WebView(urlString: url)
             .edgesIgnoringSafeArea(.bottom)
             .padding(.top, -50)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack, trailing: btnShare)
-            .sheet(isPresented: $showShareSheet) {
-                ShareSheet(activityItems: ["5H4R3_W3851T3"])
+            .sheet(isPresented: $showShareSheet) {ShareSheet(activityItems: [self.url])
         }
     }
 }
@@ -54,7 +53,6 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(url: "https://www.google.com")
-        
     }
 }
 
