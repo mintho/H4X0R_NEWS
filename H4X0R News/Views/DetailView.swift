@@ -12,6 +12,7 @@ struct DetailView: View {
     
     let url: String?
     
+    @State private var showShareSheet = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var btnBack : some View { Button(action: {
@@ -21,10 +22,19 @@ struct DetailView: View {
             Image(systemName: "arrow.left") // set image here
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.green)
-            Text("H4X0R_NEW5")
+            Text("H4X0R_N3W5")
                 .font(.system(size: 17, weight: .semibold, design: .monospaced))
                 .foregroundColor(.green)
         }
+        }
+    }
+    
+    var btnShare : some View { Button(action: {
+        self.showShareSheet = true
+    }) {
+        Image(systemName: "square.and.arrow.up") // set image here
+            .aspectRatio(contentMode: .fit)
+            .foregroundColor(.green)
         }
     }
     
@@ -34,7 +44,10 @@ struct DetailView: View {
             .edgesIgnoringSafeArea(.bottom)
             .padding(.top, -50)
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBack)
+            .navigationBarItems(leading: btnBack, trailing: btnShare)
+            .sheet(isPresented: $showShareSheet) {
+                ShareSheet(activityItems: ["5H4R3_W3851T3"])
+        }
     }
 }
 
