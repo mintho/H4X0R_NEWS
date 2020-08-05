@@ -14,15 +14,17 @@ struct ContentView: View {
     @State private var isShowing = false
     @ObservedObject var networkManager = NetworkManager()
     
+
+    
     init() {
         
- 
+        
         UINavigationBar.appearance().titleTextAttributes =
             [.font : UIFont.monospacedSystemFont(ofSize: 17, weight: .bold), .foregroundColor : UIColor.systemGreen]
         UINavigationBar.appearance().largeTitleTextAttributes =
             [.font : UIFont.monospacedSystemFont(ofSize: 30, weight: .bold), .foregroundColor : UIColor.systemGreen]
- 
-
+        
+        
     }
     
     var body: some View {
@@ -32,14 +34,14 @@ struct ContentView: View {
                     HStack(alignment: .top) {
                         Text(String(post.points)).frame(width: 40)
                             .font(.system(size: 17, design: .monospaced))
-                            .foregroundColor(Color.pink)
+                            .foregroundColor(.pink)
                         Text(post.title)
                             .font(.system(size: 17, design: .monospaced))
-                            .foregroundColor(Color.green)
+                            .foregroundColor(.green)
                     }
                 }
             }
-            .navigationBarTitle("H4X0R_NEWS").foregroundColor(.green)
+            .navigationBarTitle("H4X0R_N3W5").foregroundColor(.green)
             .pullToRefresh(isShowing: $isShowing) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.networkManager.fetchData()
