@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5771C82224DA9C59009444B4 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 5771C82124DA9C59009444B4 /* SwiftUIRefresh */; };
 		5771C82424DB10FB009444B4 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5771C82324DB10FB009444B4 /* ShareSheet.swift */; };
+		57C8A22324E5E229008AB4EC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8A22224E5E229008AB4EC /* SearchBar.swift */; };
 		ADAAB81623254E6F006325FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAB81523254E6F006325FC /* AppDelegate.swift */; };
 		ADAAB81823254E6F006325FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAB81723254E6F006325FC /* SceneDelegate.swift */; };
 		ADAAB81A23254E6F006325FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAAB81923254E6F006325FC /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		5771C82324DB10FB009444B4 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		57C8A22224E5E229008AB4EC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		ADAAB81223254E6F006325FC /* H4X0R_NEWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H4X0R_NEWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAAB81523254E6F006325FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAAB81723254E6F006325FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				ADAAB81923254E6F006325FC /* ContentView.swift */,
 				ADAAB83123255A00006325FC /* DetailView.swift */,
 				ADAAB83323255E12006325FC /* WebView.swift */,
+				57C8A22224E5E229008AB4EC /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				ADAAB82D232553C9006325FC /* NetworkManager.swift in Sources */,
 				ADAAB81623254E6F006325FC /* AppDelegate.swift in Sources */,
 				ADAAB81823254E6F006325FC /* SceneDelegate.swift in Sources */,
+				57C8A22324E5E229008AB4EC /* SearchBar.swift in Sources */,
 				ADAAB81A23254E6F006325FC /* ContentView.swift in Sources */,
 				ADAAB83423255E12006325FC /* WebView.swift in Sources */,
 				5771C82424DB10FB009444B4 /* ShareSheet.swift in Sources */,

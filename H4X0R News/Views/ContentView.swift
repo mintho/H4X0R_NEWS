@@ -13,8 +13,7 @@ struct ContentView: View {
     
     @State private var isShowing = false
     @ObservedObject var networkManager = NetworkManager()
-    
-
+    @State private var text = ""
     
     init() {
         
@@ -26,30 +25,39 @@ struct ContentView: View {
         
     }
     
+    func refresh() {
+        self.networkManager.fetchData(text)
+        print(text)
+    }
+    
     var body: some View {
         NavigationView {
-            List(networkManager.posts) { post in
-                NavigationLink(destination: DetailView(url: post.url ?? post.url2)) {
-                    HStack(alignment: .top) {
-                        Text(String(post.points)).frame(width: 40)
-                            .font(.system(size: 17, design: .monospaced))
-                            .foregroundColor(.pink)
-                        Text(post.title)
-                            .font(.system(size: 17, design: .monospaced))
-                            .foregroundColor(.green)
+
+            VStack {
+                SearchBar(text: $text, networkManager: networkManager)
+                List(networkManager.posts) { post in
+                    NavigationLink(destination: DetailView(url: post.url ?? post.url2)) {
+                        HStack(alignment: .top) {
+                            Text(String(post.points)).frame(width: 45)
+                                .font(.system(size: 17, design: .monospaced))
+                                .foregroundColor(.pink)
+                            Text(post.title)
+                                .font(.system(size: 17, design: .monospaced))
+                                .foregroundColor(.green)
+                        }
                     }
                 }
-            }
-            .navigationBarTitle("H4X0R_N3W5").foregroundColor(.green)
-            .pullToRefresh(isShowing: $isShowing) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.networkManager.fetchData()
-                    self.isShowing = false
+                .navigationBarTitle("H4X0R_N3W5").foregroundColor(.green)
+                .pullToRefresh(isShowing: $isShowing) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.refresh()
+                        self.isShowing = false
+                    }
                 }
             }
         }
         .onAppear {
-            self.networkManager.fetchData()
+            self.refresh()
         }
     }
 }

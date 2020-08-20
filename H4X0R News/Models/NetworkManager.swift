@@ -12,8 +12,15 @@ class NetworkManager: ObservableObject {
     
     @Published var posts = [Post]()
     
-    func fetchData() {
-        if let url = URL(string: "https://hn.algolia.com/api/v1/search?tags=front_page") {
+    func fetchData(_ searchTerm: String? = nil) {
+        var urlString = ""
+        if searchTerm == nil || searchTerm == "" {
+            urlString = "https://hn.algolia.com/api/v1/search?tags=front_page"
+        } else {
+            urlString = "http://hn.algolia.com/api/v1/search?query="+searchTerm!+"&tags=story"
+        }
+        print(urlString)
+        if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error == nil {
@@ -28,6 +35,8 @@ class NetworkManager: ObservableObject {
                             print(error)
                         }
                     }
+                } else {
+                    print(error!)
                 }
             }
             task.resume()
