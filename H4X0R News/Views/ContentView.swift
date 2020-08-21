@@ -27,7 +27,7 @@ struct ContentView: View {
     
     func refresh() {
         self.networkManager.fetchData(text)
-        print(text)
+        // print(text)
     }
     
     var body: some View {

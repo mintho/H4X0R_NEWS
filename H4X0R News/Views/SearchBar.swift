@@ -19,10 +19,9 @@ struct SearchBar: View {
             
             TextField("Search ...", text: $text, onEditingChanged: { (changed) in
                 if changed {
-                    print("text edit has begun")
+                    // print("text edit has begun")
                 } else {
-                    print("committed the change")
-                    // ContentView().refresh(self.text) //replace with delegate
+                    // print("committed the change")
                     let text2 = self.text.replacingOccurrences(of: " ", with: "%20")
                     self.networkManager.fetchData(text2)
                 }

@@ -19,7 +19,7 @@ class NetworkManager: ObservableObject {
         } else {
             urlString = "http://hn.algolia.com/api/v1/search?query="+searchTerm!+"&tags=story"
         }
-        print(urlString)
+        // print(urlString)
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
