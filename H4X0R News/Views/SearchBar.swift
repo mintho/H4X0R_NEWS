@@ -32,6 +32,9 @@ struct SearchBar: View {
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
+                .accentColor(.green)
+                .font(.system(size: 17, design: .monospaced))
+                .foregroundColor(.green)
                 .overlay(
                     HStack {
                         Image(systemName: "magnifyingglass")
@@ -54,12 +57,15 @@ struct SearchBar: View {
                 .onTapGesture {
                     self.isEditing = true
             }
+
             
             if isEditing {
                 Button(action: {
                     self.isEditing = false
                     self.text = ""
                     self.networkManager.fetchData(self.text)
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+
                     
                 }) {
                     Text("Cancel")
